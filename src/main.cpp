@@ -82,18 +82,6 @@ void initSPIFFS() {
   }
 }
 
-// Wifi Setup
-void initWiFi() {
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(WIFI_SSID, WIFI_PASS);
-  Serial.printf("Trying to connect [%s] ", WiFi.macAddress().c_str());
-  while (WiFi.status() != WL_CONNECTED) {
-      Serial.print(".");
-      delay(500);
-  }
-  Serial.printf(" %s\n", WiFi.localIP().toString().c_str());
-}
-
 void setup() {
     pinMode(onboard_led.pin,  OUTPUT);
     pinMode(led1.pin,         OUTPUT);
